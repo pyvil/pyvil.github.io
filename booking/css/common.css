@@ -176,35 +176,6 @@ div#start .button:hover {
     display: none;
 }
 
-.animation {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1000;
-}
-
-.animation video.no-mobile {
-    width: 100%;
-    height: 100%;
-    -webkit-transform: scale(1.5, 1.5);
-    -moz-transform: scale(1.5, 1.5);
-    -ms-transform: scale(1.5, 1.5);
-    -o-transform: scale(1.5, 1.5);
-    transform: scale(1.5, 1.5);
-}
-
-.animation video.mobile {
-    width: 100%;
-    height: 100%;
-    -webkit-transform: scale(1, 1);
-    -moz-transform: scale(1, 1);
-    -ms-transform: scale(1, 1);
-    -o-transform: scale(1, 1);
-    transform: scale(1, 1);
-}
-
 .container {
     max-width: 1000px;
     width: 80%;
@@ -212,7 +183,7 @@ div#start .button:hover {
 }
 
 .text_block {
-    min-width: 365px;
+    /*min-width: 365px;*/
     width: 365px;
     text-align: center;
     margin-top: 100px;
@@ -221,8 +192,8 @@ div#start .button:hover {
     font-family: 'BloggerSans';
     font-weight: bold;
     background: #fff;
-    font-size: 24px;
-    position: relative;
+    font-size: 18px;
+    position: absolute;
 
     -webkit-border-radius: 50px;
     -moz-border-radius: 50px;
@@ -233,7 +204,7 @@ div#start .button:hover {
 .text_block::before {
     position: absolute;
     width: 96%;
-    height: 94%;
+    height: 86%;
     left: 5px;
     top: 5px;
     display: block;
@@ -298,4 +269,252 @@ div#start .button:hover {
 
 .controls #toggle-text.open {
     background: url(../img/sprite.png) -205px -251px;
+}
+
+
+.legend{
+    width: 100%;
+    max-width: 1024px;
+    height: 37px;
+    position: absolute;
+    bottom: 0;
+    background: url(../img/pages.png);
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -ms-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;
+}
+
+.legend.open {
+    height: 235px;
+}
+
+.legend::after {
+  display: table;
+  content: ' ';
+  clear: both;
+}
+
+.legend > span{
+    position: absolute;
+    display: block;
+    font-family: 'BloggerSans';
+    font-size: 24px;
+    color: #fff;
+    width: 190px;
+    left: 44%;
+    padding-top: 12px;
+    text-align: center;
+}
+
+.legend-context {
+    width: 830px;
+    height: 172px;
+    margin: auto auto;
+    overflow: hidden;
+    float: left;
+}
+
+#slick-arrow-left {
+    width: 20px;
+    height: 37px;
+    background: url(../img/sprite.png) 0px -302px;
+    float: left;
+}
+
+#slick-arrow-right {
+    width: 20px;
+    height: 37px;
+    background: url(../img/sprite.png) -34px -302px;
+    float: left;
+}
+
+
+/* Arrows */
+.slick-prev,
+.slick-next
+{
+    font-size: 0;
+    line-height: 0;
+
+    position: absolute;
+    top: 50%;
+
+    display: block;
+
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    margin-top: -10px\9; /*lte IE 8*/
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+
+    cursor: pointer;
+
+    color: transparent;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+.slick-prev:hover,
+.slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus
+{
+    color: transparent;
+    outline: none;
+    background: transparent;
+}
+.slick-prev:hover:before,
+.slick-prev:focus:before,
+.slick-next:hover:before,
+.slick-next:focus:before
+{
+    opacity: 1;
+}
+.slick-prev.slick-disabled:before,
+.slick-next.slick-disabled:before
+{
+    opacity: .25;
+}
+
+.slick-prev:before,
+.slick-next:before
+{
+    font-family: 'slick';
+    font-size: 20px;
+    line-height: 1;
+
+    opacity: .75;
+    color: white;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.slick-prev
+{
+    left: -25px;
+}
+[dir='rtl'] .slick-prev
+{
+    right: -25px;
+    left: auto;
+}
+.slick-prev:before
+{
+    content: '←';
+}
+[dir='rtl'] .slick-prev:before
+{
+    content: '→';
+}
+
+.slick-next
+{
+    right: -25px;
+}
+[dir='rtl'] .slick-next
+{
+    right: auto;
+    left: -25px;
+}
+.slick-next:before
+{
+    content: '→';
+}
+[dir='rtl'] .slick-next:before
+{
+    content: '←';
+}
+
+/* Dots */
+.slick-slider
+{
+    margin-bottom: 30px;
+}
+
+.slick-dots
+{
+    position: absolute;
+    bottom: -45px;
+
+    display: block;
+
+    width: 100%;
+    padding: 0;
+
+    list-style: none;
+
+    text-align: center;
+}
+.slick-dots li
+{
+    position: relative;
+
+    display: inline-block;
+
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+    padding: 0;
+
+    cursor: pointer;
+}
+.slick-dots li button
+{
+    font-size: 0;
+    line-height: 0;
+
+    display: block;
+
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+
+    cursor: pointer;
+
+    color: transparent;
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+.slick-dots li button:hover,
+.slick-dots li button:focus
+{
+    outline: none;
+}
+.slick-dots li button:hover:before,
+.slick-dots li button:focus:before
+{
+    opacity: 1;
+}
+.slick-dots li button:before
+{
+    font-family: 'slick';
+    font-size: 6px;
+    line-height: 20px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 20px;
+    height: 20px;
+
+    content: '•';
+    text-align: center;
+
+    opacity: .25;
+    color: black;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.slick-dots li.slick-active button:before
+{
+    opacity: .75;
+    color: black;
 }
