@@ -168,13 +168,13 @@
         this.soundIsStop        = false;
 
 
-        this.sound              = new Music();
+        //this.sound              = new Music();
 
         // fire an action when sound was ended
         var self = this;
-        this.sound.song.on('end', function () {
+        /*this.sound.song.on('end', function () {
             self.turnPage('next');
-        });
+        });*/
 
         this.init();
     };
@@ -273,16 +273,18 @@
         init : function () {
             this.prepareAligns();
             this.preparePages();
+            for (var i = 1; i < this.pagesAmount; i++) {
+                $('.legend-context').append("<img src='img/sample/cud" + i + ".jpg' data-page='" + i + "'/>");
+            }
+            var self = this;
+            $('.legend').delegate('img', 'click', function () {
+               self.turnPageTo($(this).attr('data-page'));
+            });
             $('.legend-context').slick({
                 slidesToShow : 4,
-                slidesToScroll : 1,
-                prevArrow : $('#slick-arrow-left'),
-                nextArrow : $('#slick-arrow-right')
+                // centerPadding: '60px',
+                slidesToScroll : 1
             });
-
-            for (var i = 1; i < this.pagesAmount; i++) {
-                $('.legend-context').slick('slickAdd', "<img src='img/sample/cud" + i + ".jpg' />");
-            }
         },
 
         /**
@@ -318,12 +320,23 @@
             this.prepareEvents();
         },
 
+        turnPageTo : function(index) {
+          current = parseInt($(this.currentPage).data('page'), 10);
+          var _index = index;
+          if (current > _index) {
+              this.turnPage('prev', _index);
+          } else {
+              this.turnPage('next', _index);
+          }
+        },
+
         /**
          * Turn page by passing direction
          * @param direction
          * @returns {boolean}
          */
-        turnPage : function (direction) {
+        turnPage : function (direction, index) {
+            index = index || -1;
             current = parseInt($(this.currentPage).data('page'), 10);
             var isScroll = parseInt($(this.currentPage).attr('data-scroll'), 10);
             var currentPageInstance = this.currentPage;
@@ -332,13 +345,14 @@
                 case 'next' :
                     click = isScroll ? click + 1 : click;
                     current++;
-                    if ((isScroll == 1) && (click < 2)){
+                    if ((isScroll == 1) && (click < 2) && (index != -1)){
                       $(this.currentPage).css('background-position', '-' + (animationImageWidth / 2) + 'px 0px');
                       $(this.currentPage).find('.text_block').attr('style', '');
                       $(this.currentPage).find('.text_block').html(pageText[current - 1].text[click]);
                       $(this.currentPage).find('.text_block').css(pageText[current - 1].style[click]);
                       return;
                     } else {
+                      current = (index != -1) ? index : current;
                       this.currentPage = $(this.allPagesInstances).parent().find('[data-page="' + (current) + '"]');
                       click = 0;
                     }
@@ -349,13 +363,14 @@
                     click = isScroll ? click - 1 : click;
                     current = direction == 'home' ? 0 : current - 1;
                     if ( current < 0 ) return false;
-                    if ((isScroll == 1) && (click >= 0)){
+                    if ((isScroll == 1) && (click >= 0) && (index != -1)){
                       $(this.currentPage).css('background-position', '0px 0px');
                       $(this.currentPage).find('.text_block').attr('style', '');
                       $(this.currentPage).find('.text_block').html(pageText[current - 1].text[click]);
                       $(this.currentPage).find('.text_block').css(pageText[current - 1].style[click]);
                       return;
                     } else {
+                      current = (index != -1) ? index : current;
                       this.currentPage = $(this.allPagesInstances).parent().find('[data-page="' + (current) + '"]');
                       click = 0;
                     }
@@ -390,7 +405,7 @@
                 break;
             }
             $('.book').css("transition-duration", (duration / 1000).toFixed(1) + "s")
-                      .css("transform", "translate(" + value + "px,0)");
+                      .css("transform", "translate(" + ((index != -1) ? value * index : value) + "px,0)");
 
             $(currentPageInstance).removeClass('active');
             $(this.currentPage).addClass('active');
@@ -402,7 +417,7 @@
                     this.sound.play((current).toString());
                 $('#sound').show();
             } else {
-                this.sound.stop(current.toString());
+                //this.sound.stop(current.toString());
                 $('#sound').hide();
             }
         }

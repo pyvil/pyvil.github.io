@@ -31,7 +31,7 @@ var Music = function () {
     };
 
 
-    this.init();
+    //this.init();
 };
 
 Music.prototype = {
@@ -39,7 +39,7 @@ Music.prototype = {
      *
      */
     init : function () {
-        this.startMusic();
+        //this.startMusic();
     },
 
     /**

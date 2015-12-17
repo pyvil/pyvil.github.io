@@ -65,15 +65,15 @@ body .slide {
 }
 
 div#start {
-    background: url(http://www.mikelavere.com/wp-content/uploads/2015/03/self-improvement-books.jpg);
+    background: url(../img/start.jpg);
     -webkit-background-size: cover;
     background-size: cover;
     background-attachment: fixed;
     color: #fff;
-
+    z-index : 1;
 }
 
-div#start::after {
+/*div#start::after {
     content: ' ';
     display: block;
     position: absolute;
@@ -83,39 +83,29 @@ div#start::after {
     height: 100%;
     background: rgba(0,0,0,0.6);
     z-index: 1;
-}
+}*/
 
 .block {
     z-index: 2;
-    position: relative;
+    position: absolute;
     text-align: center;
     width: 1000px;
     margin: 0 auto;
-}
-
-div#start h1 {
-    font-family: Roboto;
-    font-weight: 100;
-    text-align: center;
-    padding: 20px 0;
+    bottom: 100px;
+    right : 100px;
 }
 
 div#start .button {
     display: inline-block;
     margin: 10px 10px;
-    padding: 8px 15px;
-    border: 3px solid #fff;
-    font-size: 16px;
-    font-family: Roboto;
+    padding: 20px 20px;
+    font-size: 24px;
+    font-family: 'BloggerSans';
     font-weight: 300;
     text-align: center;
     cursor: pointer;
-
-}
-
-div#start .button:hover {
-    background: #fff;
-    color: #262626;
+    border-radius : 10px;
+    background : #4D3861;
 }
 
 .home-sound {
@@ -290,12 +280,6 @@ div#start .button:hover {
     height: 235px;
 }
 
-.legend::after {
-  display: table;
-  content: ' ';
-  clear: both;
-}
-
 .legend > span{
     position: absolute;
     display: block;
@@ -310,24 +294,21 @@ div#start .button:hover {
 
 .legend-context {
     width: 830px;
-    height: 172px;
+    /*height: 172px;*/
     margin: auto auto;
-    overflow: hidden;
-    float: left;
+    margin-top: 80px;;
 }
 
 #slick-arrow-left {
     width: 20px;
     height: 37px;
     background: url(../img/sprite.png) 0px -302px;
-    float: left;
 }
 
 #slick-arrow-right {
     width: 20px;
     height: 37px;
     background: url(../img/sprite.png) -34px -302px;
-    float: left;
 }
 
 
@@ -517,4 +498,125 @@ div#start .button:hover {
 {
     opacity: .75;
     color: black;
+}
+
+
+/* Slider */
+.slick-slider
+{
+    position: relative;
+
+    display: block;
+
+    -moz-box-sizing: border-box;
+         box-sizing: border-box;
+
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+        touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list
+{
+    position: relative;
+
+    display: block;
+    overflow: hidden;
+
+    margin: 0;
+    padding: 0;
+}
+.slick-list:focus
+{
+    outline: none;
+}
+.slick-list.dragging
+{
+    cursor: pointer;
+    cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list
+{
+    -webkit-transform: translate3d(0, 0, 0);
+       -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+         -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+}
+
+.slick-track
+{
+    position: relative;
+    top: 0;
+    left: 0;
+
+    display: block;
+}
+.slick-track:before,
+.slick-track:after
+{
+    display: table;
+
+    content: '';
+}
+.slick-track:after
+{
+    clear: both;
+}
+.slick-loading .slick-track
+{
+    visibility: hidden;
+}
+
+.slick-slide
+{
+    display: none;
+    float: left;
+
+    height: 100%;
+    min-height: 1px;
+}
+[dir='rtl'] .slick-slide
+{
+    float: right;
+}
+.slick-slide img
+{
+    display: block;
+}
+.slick-slide.slick-loading img
+{
+    display: none;
+}
+.slick-slide.dragging img
+{
+    pointer-events: none;
+}
+.slick-initialized .slick-slide
+{
+    display: block;
+}
+.slick-loading .slick-slide
+{
+    visibility: hidden;
+}
+.slick-vertical .slick-slide
+{
+    display: block;
+
+    height: auto;
+
+    border: 1px solid transparent;
+}
+.slick-arrow.slick-hidden {
+    display: none;
 }
