@@ -1,0 +1,410 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: #fff;
+    width: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li {
+    font-weight: 300;
+    font-size: 15px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-weight: 700;
+}
+
+h3 {
+    color: #F6A623;
+    font-size: 30px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+h4 {
+    font-size: 48px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+h5 {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #000;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.clear::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.font-color-purple {
+    color: #BD10E0;
+}
+
+.button {
+    background: #BD10E0;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 20px;
+    box-shadow: 0 9px 11px 0 rgba(189,16,224,0.35);
+    border-radius: 100px;
+    width: 317px;
+    padding: 15px 0;
+    text-align: center;
+    font-weight: 700;
+    cursor: pointer;
+    border: 0;
+    display: block;
+}
+
+.arrow {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent;
+    z-index: 2;
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+}
+
+.arrow.bottom {
+    border-width: 10px 35px 0px 35px;
+}
+
+.arrow.purple {
+    border-color: #BD10E0 transparent transparent transparent;
+}
+
+.button.mini {
+    font-size: 14px;
+    width: 235px;
+    padding: 6px 0;
+}
+
+.black-bg {
+    background: #0A0905;
+}
+
+.white-bg {
+    background: #fff;
+}
+
+.white-black-bg {
+    background: #f6f6f6;
+}
+
+.white-bg .button {
+    box-shadow: 0 8px 10px 0 rgba(189,16,224,0.23);
+}
+
+#step-1-bg {
+    background: url(../img/fitness.png) no-repeat right;
+}
+
+.header {
+    padding-top: 59px;
+    width: 924px;
+}
+
+.header.absolute {
+    top: 59px;
+    padding: 0;
+    z-index: 1;
+}
+
+.content {
+    width: 100%;
+    height: 700px;
+    position: relative;
+}
+
+.content-wrapper {
+    max-width: 1100px;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.common {
+    color: #fff;
+}
+
+.logo {
+    width: 101px;
+    height: 33px;
+}
+
+.logo img {
+    width: 101px;
+    height: 33px;
+}
+
+.telephone span {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.content-block {
+    width: 400px;
+    margin-top: 207px;
+    color: #fff
+}
+
+.up-to-60 {
+    font-size: 60px;
+}
+
+.content-block p {
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 82px;
+    margin-top: 10px;
+}
+
+.column {
+    margin-top: 59px;
+    margin-right: 70px;
+    border-right: 4px solid #F7FCFD;
+}
+
+.column ul {
+    margin-top: 118px;
+}
+
+.column ul li .program-image {
+    background: url(../img/sprites.png) no-repeat;
+    width: 69px;
+    height: 69px;
+}
+
+.column ul li {
+    width: 145px;
+    margin-right: 50px;
+    margin-bottom: 20px;
+}
+
+.column ul li span {
+    display: block;
+}
+
+#program-video {
+    background-position: 0 -364px;
+}
+
+#program-community {
+    background-position: 0 -273px;
+}
+
+#program-menu {
+    background-position: 0 0;
+}
+
+#program-levels {
+    background-position: 0 -185px;
+}
+
+#program-kcal {
+    background-position: 0 -93px;
+}
+
+#program-consult {
+    background-position: -97px 0;
+}
+
+.content .column:last-child {
+    margin: 0;
+    border-right: none;
+}
+
+.column-7 {
+    width: 60%;
+}
+
+.column-5 {
+    width: 33%;
+}
+
+.column-6 {
+    width: 50%;
+    border: 0;
+    margin-right: 0;
+}
+
+.gift {
+    width: 187px;
+    height: 188px;
+    background: url(../img/sprites.png) no-repeat -91px -247px;
+    margin: 230px 0 0 0;
+}
+
+.gifts .title {
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+
+#step-3-bg {
+    background: url(../img/fitness.png) no-repeat left;
+}
+
+#step-3 .content-block {
+    margin-right: 155px;
+}
+
+h4.margin-bottom {
+    margin-bottom: 79px;
+}
+
+.steps {
+    position: fixed;
+    right: 20px;
+    top: 45%;
+    width: 9px;
+    z-index: 1;
+}
+
+.steps a {
+    display: block;
+    width: 9px;
+    height: 9px;
+    border-radius: 100px;
+    opacity: 0.3;
+    margin: 5px 0;
+}
+
+.steps.odd a {
+    background: #FFFFFF;
+}
+
+.steps.even a {
+    background: #BD0FE1;
+}
+
+
+.steps a:hover {
+    opacity: 1;
+}
+
+.steps a.active {
+    opacity: 1;
+}
+
+ul.line {
+    margin-top: 50px;
+    width: 357px;
+}
+
+ul.line li {
+    width: auto;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.line li:before{
+    content: "\2014\a0";
+    font-weight: 700;
+    color: #F6A623;
+    font-size: 32px;
+    display: inline-block;
+    vertical-align: -6px;
+}
+
+p.notice {
+    color: #BD10E0;
+    font-size: 13px;
+    width: 300px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+/*=================================================================*/
+/*Popup*/
+.popup-wrapper {
+    display: none;
+    width: 893px;
+    position: fixed;
+    background: #fff;
+    padding: 50px 0;
+    z-index: 1000;
+}
+
+.popup-content {
+    width: 400px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.popup-content form {
+    margin: 20px 0;
+}
+
+.popup-content .input-text {
+    width: 398px;
+    padding: 15px 0;
+    text-align: center;
+    border-radius: 100px;
+    background: #fff;
+    border: 1px solid #F6A623;
+    font-size: 18px;
+    color: #323749;
+    font-weight: 300;
+    margin: 10px 0;
+}
+
+.popup-content .button {
+    margin: 0 auto;
+}
+
+.popup-content .close-button{
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    width: 31px;
+    height: 31px;
+    content: 'X';
+}
+
+.shadow {
+    display: none;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: rgba(0,0,0,0.33);
+    z-index: 999;
+}
+/*=================================================================*/
